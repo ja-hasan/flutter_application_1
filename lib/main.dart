@@ -20,13 +20,13 @@ class LabClass05 extends StatelessWidget {
             body: Container(
               height: double.infinity,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.star,
                     size: 50,
-                    color: const Color.fromARGB(255, 221, 71, 71),
+                    color: const Color.fromARGB(210, 16, 16, 16),
                   ),
                   Icon(
                     Icons.star,
