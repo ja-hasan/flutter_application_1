@@ -1,53 +1,47 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());  // This runs the main app
+void main(){
+  runApp(const LabClass05());
 }
 
-class MyApp extends StatelessWidget {
+class LabClass05 extends StatelessWidget{
+  const LabClass05({super.key});
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,  // Set primary color of the app
-      ),
-      home: MyHomePage(),  // The first screen to show when the app launches
-    );
-  }
-}
+      title : "Basic Flutter UI - 02",
+      home: Scaffold(
+        appBar: AppBar(
+          
+          title: Text("Basic Flutter UI - 2"),
+          centerTitle: true,
+          backgroundColor:  const Color.fromARGB(155, 36, 2, 254),
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Hello, World!'),  // Title for the app bar
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Welcome to Flutter!',
-              style: TextStyle(fontSize: 24),
+          elevation: 23,
+        ),
+        body: Row(
+          children: [
+            Text("HI ",
+              style: TextStyle(
+                color: Colors.yellow,
+                fontSize: 30,
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                // Action when button is pressed
-              },
-              child: Text('Press Me'),
+            Text("This is ",
+              style:  TextStyle(
+                color: Colors.blue,
+                fontSize: 50,
+              ),
+            ),
+            Text("flutter ",
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 70,
+              ),  
             ),
           ],
-        ),
-      ),
+        )
+      )
     );
   }
 }
