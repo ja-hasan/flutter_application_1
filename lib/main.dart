@@ -1,55 +1,99 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const LabClass05());
+  runApp(const LabClass06());
 }
 
-class LabClass05 extends StatelessWidget {
-  const LabClass05({super.key});
+class LabClass06 extends StatelessWidget {
+  const LabClass06({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Basic Flutter UI - 02",
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text("Basic Flutter UI - 2"),
-              centerTitle: true,
-              backgroundColor: const Color.fromARGB(155, 36, 2, 254),
-              elevation: 23,
+      title: "Flutter Layout with Online Image",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Online Image Example"),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          elevation: 10,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Container(
+            padding: const EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.grey[200],
             ),
-            body: Container(
-              height: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.star,
-                    size: 50,
-                    color: const Color.fromARGB(210, 16, 16, 16),
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 50,
-                    color: Colors.grey,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 50,
-                    color: Colors.grey,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 50,
-                    color: Colors.grey,
-                  ),
-                  Icon(
-                    Icons.star_border,
-                    size: 50,
-                    color: Colors.grey,
-                  ),
-                ],
-              ),
-            )));
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      "50% OFF",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Image.network(
+                      'https://nikearprod.vtexassets.com/arquivos/ids/1217812-800-800?width=800&height=800&aspect=true',
+                      width: 450,
+                      height: 450,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: const [
+                    SizedBox(width: 10),
+                    Text(
+                      "Nike Air Max",
+                      style: TextStyle(fontSize: 40),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      "450",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "100",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
